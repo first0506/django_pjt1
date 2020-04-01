@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>상세 조회</h2>
+<hr>
+<p>제목: {{review.title}}</p>
+<p>내용: {{review.content}}</p>
+<p>랭크: {{review.rank}}</p>
+<p>작성시간: {{review.created_at}}</p>
+<p>수정시간: {{review.updated_at}}</p>
+<a href='/community/'>BACK</a>
+{% endblock %}

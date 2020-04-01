@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class='d-flex justify-content-center my-3 font-italic'>리뷰 모음</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">제목</th>
+      <th scope="col">내용</th>
+      <th scope="col">평점</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for review in reviews %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><a href='/community/review_detail/{{review.pk}}'>{{ review.title }}</a></td>
+      <td>{{review.content}}</td>
+      <td>{{review.rank}}</td>
+    </tr>
+    {% endfor %}
+{% endblock %}
